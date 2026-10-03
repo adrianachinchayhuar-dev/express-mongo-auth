@@ -1,0 +1,50 @@
+<%- include('partials/head', { title }) %>
+<body data-page="profile" data-protected data-roles="user,admin">
+<%- include('partials/nav') %>
+<main class="container">
+    <div class="card" style="margin-top:2rem">
+        <form id="profileForm" class="card-content" novalidate>
+            <span class="card-title">Mi cuenta</span>
+            <p id="meta" class="hint"></p>
+            <div class="row">
+                <div class="input-field col s12 m6">
+                    <input id="name" type="text" required>
+                    <label for="name">Nombres</label>
+                </div>
+                <div class="input-field col s12 m6">
+                    <input id="lastName" type="text" required>
+                    <label for="lastName">Apellidos</label>
+                </div>
+                <div class="input-field col s12 m6">
+                    <input id="email" type="email" disabled>
+                    <label for="email">Email (no editable)</label>
+                </div>
+                <div class="input-field col s12 m6">
+                    <input id="phoneNumber" type="tel" required>
+                    <label for="phoneNumber">Teléfono</label>
+                </div>
+                <div class="input-field col s12 m6">
+                    <input id="birthdate" type="date" required>
+                    <label for="birthdate" class="active">Fecha de nacimiento</label>
+                </div>
+                <div class="input-field col s12 m6">
+                    <input id="age" type="text" disabled>
+                    <label for="age" class="active">Edad</label>
+                </div>
+                <div class="input-field col s12 m6">
+                    <input id="adress" type="text">
+                    <label for="adress">Dirección</label>
+                </div>
+                <div class="input-field col s12 m6">
+                    <input id="url_profile" type="url">
+                    <label for="url_profile">URL de foto de perfil</label>
+                </div>
+            </div>
+            <button class="btn teal darken-2 waves-effect" type="submit"><i class="material-icons left">save</i>Guardar cambios</button>
+        </form>
+    </div>
+</main>
+<%- include('partials/foot') %>
+<script src="/js/profile.js"></script>
+</body>
+</html>

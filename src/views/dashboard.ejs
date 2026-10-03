@@ -1,0 +1,19 @@
+<%- include('partials/head', { title }) %>
+<body data-page="dashboard" data-protected data-roles="user,admin">
+<%- include('partials/nav') %>
+<main class="container">
+    <div class="card" style="margin-top:2rem">
+        <div class="card-content">
+            <span class="card-title" id="welcome">Bienvenido</span>
+            <p>Aquí están tus datos:</p>
+            <table class="striped" style="margin-top:1rem">
+                <tbody id="userData"></tbody>
+            </table>
+        </div>
+        <div class="card-action"><a href="/profile">Editar mi perfil</a></div>
+    </div>
+</main>
+<%- include('partials/foot') %>
+<script src="/js/dashboard.js"></script>
+</body>
+</html>

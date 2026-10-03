@@ -1,0 +1,40 @@
+<%- include('partials/head', { title }) %>
+<body class="auth-page" data-page="signIn">
+<main class="auth-main">
+    <div class="auth-shell">
+
+        <section class="auth-visual">
+            <div class="logo"><i class="material-icons">verified_user</i></div>
+            <h2>WELCOME</h2>
+            <p class="lead">Accede a tu cuenta de forma segura con autenticación JWT.</p>
+            <ul>
+                <li><i class="material-icons">lock</i> Sesión protegida con token</li>
+                <li><i class="material-icons">groups</i> Acceso según tu rol</li>
+                <li><i class="material-icons">person</i> Administra tu perfil</li>
+            </ul>
+        </section>
+
+        <section class="auth-form-side">
+            <form id="signInForm" class="auth-form" novalidate>
+                <h5 class="auth-title">USER LOGIN</h5>
+
+                <div class="pill-field">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" placeholder="correo@ejemplo.com" required>
+                </div>
+                <div class="pill-field">
+                    <label for="password">Contraseña</label>
+                    <input id="password" type="password" placeholder="••••••••" required>
+                </div>
+
+                <button class="btn waves-effect" type="submit">Login</button>
+                <p class="auth-link">¿No tienes cuenta? <a href="/signUp">Crear cuenta</a></p>
+            </form>
+        </section>
+
+    </div>
+</main>
+<%- include('partials/foot') %>
+<script src="/js/signIn.js"></script>
+</body>
+</html>

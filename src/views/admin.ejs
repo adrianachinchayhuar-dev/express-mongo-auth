@@ -1,0 +1,33 @@
+<%- include('partials/head', { title }) %>
+<body data-page="admin" data-protected data-roles="admin">
+<%- include('partials/nav') %>
+<main class="container">
+    <div class="card" style="margin-top:2rem">
+        <div class="card-content">
+            <span class="card-title">Usuarios registrados <span class="badge teal white-text" id="count" style="border-radius:3px">0</span></span>
+            <div style="overflow-x:auto">
+                <table class="striped highlight">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th><th>Email</th><th>Rol</th><th>Teléfono</th>
+                            <th>Edad</th><th>Registro</th><th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="usersBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+
+<div id="userModal" class="modal">
+    <div class="modal-content">
+        <h5 id="modalTitle"></h5>
+        <table><tbody id="modalBody"></tbody></table>
+    </div>
+    <div class="modal-footer"><a href="#!" class="modal-close btn-flat">Cerrar</a></div>
+</div>
+<%- include('partials/foot') %>
+<script src="/js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,249 @@
+/* ================= Paleta ================= */
+:root {
+    --blue-dark: #2170A0;
+    --blue: #36A0D6;
+    --blue-light: #70BBDB;
+    --blue-pale: #B7D8ED;
+    --blue-mist: #CDE5F5;
+    --btn-a: #4FAFC8;
+    --btn-b: #3A8FBD;
+    --field-bg: #E4F1F8;
+    --field-border: #B7D8ED;
+    --text: #1E3A5F;
+    --muted: #6B7F96;
+    --white: #FFFFFF;
+    --radius: 20px;
+}
+
+/* ================= Base ================= */
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #CFE3F3 0%, #E6EFF8 45%, #F5F9FC 100%) fixed;
+}
+main { flex: 1; }
+a { color: var(--blue-dark); }
+
+/* Color de los botones y badges (más suave que antes) */
+.teal.darken-2, .teal {
+    background: linear-gradient(135deg, var(--btn-a), var(--btn-b)) !important;
+}
+
+/* ================= Botones ================= */
+.btn, .btn-small {
+    border-radius: 999px;
+    text-transform: none;
+    font-weight: 600;
+    letter-spacing: .3px;
+    box-shadow: 0 6px 16px rgba(58, 143, 189, .25);
+    transition: transform .15s, box-shadow .15s;
+}
+.btn:hover, .btn-small:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 22px rgba(58, 143, 189, .35);
+}
+
+/* ================= Navbar ================= */
+nav {
+    height: 64px;
+    line-height: 64px;
+    background: linear-gradient(90deg, #3A8FBD, #5AAFD8) !important;
+    box-shadow: 0 4px 18px rgba(58, 143, 189, .28);
+}
+nav .brand-logo { font-size: 1.35rem; font-weight: 700; margin-left: 8px; }
+nav ul a { font-weight: 500; font-size: .9rem; text-transform: uppercase; letter-spacing: .5px; transition: background .15s; }
+nav ul a:hover { background: rgba(255, 255, 255, .18); }
+
+/* ================= Tarjetas ================= */
+.card {
+    border-radius: var(--radius);
+    box-shadow: 0 10px 32px rgba(33, 112, 160, .12);
+    overflow: hidden;
+}
+.card .card-title { font-weight: 700; font-size: 1.5rem; color: var(--blue-dark); }
+.card .card-action { border-top: 1px solid var(--blue-mist); }
+.card .card-action a { font-weight: 600; text-transform: none; color: var(--btn-b) !important; }
+
+/* ================= Inputs (dashboard / perfil) ================= */
+.input-field input:focus {
+    border-bottom: 2px solid var(--blue) !important;
+    box-shadow: none !important;
+}
+.input-field input:focus + label,
+.input-field .prefix.active { color: var(--blue-dark) !important; }
+.hint { font-size: .8rem; color: var(--muted); }
+
+/* ================= Tablas ================= */
+table { font-size: .95rem; }
+thead th {
+    color: var(--blue-dark);
+    font-size: .75rem;
+    text-transform: uppercase;
+    letter-spacing: .6px;
+    border-bottom: 2px solid var(--blue-mist);
+}
+tbody tr { border-bottom: 1px solid #EAF1F8; }
+table.highlight > tbody > tr:hover { background: var(--blue-mist); }
+table.striped > tbody > tr:nth-child(odd) { background: #F5F9FD; }
+tbody th { color: var(--muted); font-weight: 500; width: 35%; }
+
+/* ================= Modal ================= */
+.modal { border-radius: var(--radius); max-width: 560px; }
+.modal .modal-content h5 { font-weight: 700; color: var(--blue-dark); }
+.modal .modal-footer { border-radius: 0 0 var(--radius) var(--radius); }
+
+/* ================= Login / Registro ================= */
+.auth-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 16px;
+}
+.auth-shell {
+    width: 100%;
+    max-width: 980px;
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    background: var(--white);
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 30px 70px rgba(33, 112, 160, .22);
+}
+
+/* ----- Lado izquierdo ----- */
+.auth-visual {
+    position: relative;
+    overflow: hidden;
+    padding: 48px 40px;
+    color: var(--white);
+    background: linear-gradient(160deg, #3A78A8 0%, #4A9BD0 70%, #7DBBDC 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.auth-visual::before,
+.auth-visual::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .12);
+}
+.auth-visual::before { width: 340px; height: 340px; top: -120px; right: -110px; }
+.auth-visual::after  { width: 260px; height: 260px; bottom: -90px; left: -80px; background: rgba(255, 255, 255, .10); }
+.auth-visual > * { position: relative; z-index: 1; }
+
+.auth-visual .logo {
+    width: 64px; height: 64px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, .2);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px;
+}
+.auth-visual .logo i { font-size: 34px; }
+.auth-visual h2 {
+    margin: 0 0 10px;
+    font-size: 2.6rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+.auth-visual p.lead { margin: 0 0 26px; opacity: .92; line-height: 1.5; }
+.auth-visual ul { margin: 0; padding: 0; list-style: none; }
+.auth-visual li { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; font-weight: 500; }
+.auth-visual li i {
+    background: rgba(255, 255, 255, .2);
+    border-radius: 50%;
+    padding: 6px;
+    font-size: 20px;
+}
+
+/* ----- Lado derecho ----- */
+.auth-form-side {
+    padding: 48px 44px;
+    display: flex;
+    align-items: center;
+    background: #F7FAFD;
+}
+.auth-form { width: 100%; }
+.auth-title {
+    margin: 0 0 24px;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: var(--blue-dark);
+    font-size: 1.5rem;
+}
+
+.pill-field { margin-bottom: 14px; }
+.pill-field label {
+    display: block;
+    margin: 0 0 6px 16px;
+    font-size: .78rem;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
+/* Campos claros: texto oscuro y fácil de leer */
+.auth-form .pill-field input:not(.browser-default) {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    height: 46px !important;
+    margin: 0 !important;
+    padding: 0 22px !important;
+    border: none !important;
+    border-radius: 999px !important;
+    background: var(--field-bg) !important;
+    color: var(--text) !important;
+    font-weight: 500;
+    text-align: center;
+    box-shadow: inset 0 0 0 1.5px var(--field-border) !important;
+    transition: background .15s, box-shadow .15s;
+}
+.auth-form .pill-field input::placeholder { color: #8DA4BA; font-weight: 400; }
+.auth-form .pill-field input:focus {
+    background: var(--white) !important;
+    box-shadow: inset 0 0 0 2px var(--blue), 0 0 0 4px rgba(54, 160, 214, .18) !important;
+}
+.auth-form input[type=date]::-webkit-calendar-picker-indicator { cursor: pointer; opacity: .65; }
+
+.auth-form .hint { display: block; margin: 6px 0 0 16px; }
+.auth-form .btn {
+    width: 100%;
+    height: 46px;
+    line-height: 46px;
+    margin-top: 10px;
+    background: linear-gradient(90deg, var(--btn-a), var(--btn-b)) !important;
+}
+.auth-link { text-align: center; margin: 22px 0 0; color: var(--muted); font-size: .92rem; }
+.auth-link a { font-weight: 700; color: var(--btn-b); }
+
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 14px; }
+.form-grid > * { min-width: 0; }
+.form-grid .full { grid-column: 1 / -1; }
+
+/* ================= 403 / 404 ================= */
+.center-page { text-align: center; margin-top: 7rem; }
+.center-page h1 {
+    font-size: 7rem; font-weight: 800; margin: 0;
+    background: linear-gradient(135deg, #3A8FBD, #6CC3CF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent !important;
+}
+.center-page h5 { font-weight: 700; color: var(--blue-dark); }
+.center-page p { color: var(--muted); margin-bottom: 24px; }
+
+/* ================= Responsive ================= */
+@media (max-width: 800px) {
+    .auth-shell { grid-template-columns: 1fr; }
+    .auth-visual { padding: 28px 24px; }
+    .auth-visual h2 { font-size: 1.9rem; }
+    .auth-visual ul, .auth-visual p.lead { display: none; }
+    .auth-form-side { padding: 30px 22px; }
+    .form-grid { grid-template-columns: 1fr; }
+    nav .brand-logo { font-size: 1.1rem; }
+}
